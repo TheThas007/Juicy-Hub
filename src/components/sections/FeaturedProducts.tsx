@@ -15,9 +15,7 @@ export function FeaturedProducts() {
       try {
         const res = await fetch("/api/products", { cache: "no-store" })
         const data = await res.json()
-        // Filter only featured products if you want, but the original code showed all products
-        // We'll show products that are marked as featured, or just all if that's how it was
-        setAllProducts(data.filter((p: Product) => p.isFeatured))
+        setAllProducts(data)
       } catch (error) {
         console.error("Failed to fetch products", error)
       } finally {
