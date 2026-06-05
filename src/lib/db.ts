@@ -33,8 +33,13 @@ const db = getFirestore(app);
 
 // Products
 export async function getProducts(): Promise<Product[]> {
-  const snapshot = await getDocs(collection(db, "products"));
-  return snapshot.docs.map(doc => doc.data() as Product);
+  try {
+    const snapshot = await getDocs(collection(db, "products"));
+    return snapshot.docs.map(doc => doc.data() as Product);
+  } catch (error) {
+    console.error("Error fetching products:", error);
+    return [];
+  }
 }
 
 export async function getProduct(id: string): Promise<Product | null> {
@@ -52,39 +57,13 @@ export async function deleteProduct(id: string): Promise<void> {
 
 // Gallery
 export async function getGallery(): Promise<GalleryImage[]> {
-  const snapshot = await getDocs(collection(db, "gallery"));
-  const gallery = snapshot.docs.map(doc => doc.data() as GalleryImage);
-  
-  // Seed with default images if empty
-  if (gallery.length === 0) {
-    const defaultGallery: GalleryImage[] = [
-      {
-        "id": "g1",
-        "url": "https://lh3.googleusercontent.com/aida-public/AB6AXuCNc7mjysQw-pBtuH4QTjNSChAPO9xmD_tC5UdqufnP4dVydgZvjyGratI2XKd4teXdXlmJQ2nohtsAwzIrCXjHIUdDp_OhoMz171nMtmCibCXxSDCSCbKdsUHEJJE9OjeapeEAMLoAzANAUzmI1ud1X_80ZzTwSl5vQuT9B8hm6lDi436eNoWQf4jDj4KQEyHFc9uVOyvetXolYaF1o9HywAmvOstM6E4OAQmphRxzF7qgtdqeL8d7kw_HilyUIdgJ-W6h8ukhvVk",
-        "alt": "Classic Falooda"
-      },
-      {
-        "id": "g2",
-        "url": "https://lh3.googleusercontent.com/aida-public/AB6AXuAF0ZY4x6XRIqBRFpPi2UlQzoWTr5n21MpPJMK0UawRlHFtKGWgZ5dzwHeXumqS3XrLn95Bri4fE7awQIwLbfd75JZpRtmM_crGWjg5EQSIZse-DNdm2IyDrJviw1wAFyuHkHudGujQcbOKezlF0f1xEfCShxOor6oCur5WTRhp3SjzxYg1BIHGEdbyOOSp0MYXQBcf5OqiH9KJJ3RXelevszTFLHxctBfXjbZZLdV4gPv0t-mQOqalMESgL_CFqL3cbbfVlYcVOiE",
-        "alt": "Masala Tea"
-      },
-      {
-        "id": "g3",
-        "url": "https://lh3.googleusercontent.com/aida-public/AB6AXuBDNe7cDN668GpET0_Gpb4bkDwBJ62oXT8ZdnIY3lVpwLLvF_1h0UNU86DDpmwBBoxiiJPn5rW2nCbfQGa0G345_lNTLedQUs3Q50J4d-XNx3hP6WiYHif-0EmYGoweAiAwIf3PlgFLMnEcjYPzF9X86ELq728qR5DaVBDZuYs_B2uE5tAQPtj3x0-Br_S9j3Sc7UPeidyw1WvmppGYqO_mJDnbdt0qNdGlaRXZz0EeW2SXAdUh6wa509JObC7lc_V2UcqwdF0q2ng",
-        "alt": "Milk Sarbath"
-      },
-      {
-        "id": "g4",
-        "url": "https://lh3.googleusercontent.com/aida-public/AB6AXuDLewevG2XDmOiS6cqtGCONpWBiqhMkMBRaEhTBfi9Hy-DI5l2X_fxXEnjawZSj5pvQddL2jam6ad_yd-PcRBTSUuJzhgYY1m_1tvZ4dkqtM1pzbfq8cKZMplhcmnfVKWVm_mu46hsYDGPHio0EqgKuvoeYVDFWZ4mzF9jfmxF03RkZM3wfEdAYn_lcsmfFfM3BpX3kCvozzH8oBfE3aAWn_InyUqYTgwFC3ZwcvpDmh1oN16fGEKDsGTrTbBRz1cXFXIDkOk6siWM",
-        "alt": "Watermelon Splash"
-      }
-    ];
-    for (const img of defaultGallery) {
-      await saveGalleryImage(img);
-    }
-    return defaultGallery;
+  try {
+    const snapshot = await getDocs(collection(db, "gallery"));
+    return snapshot.docs.map(doc => doc.data() as GalleryImage);
+  } catch (error) {
+    console.error("Error fetching gallery:", error);
+    return [];
   }
-  return gallery;
 }
 
 export async function getGalleryItem(id: string): Promise<GalleryImage | null> {
