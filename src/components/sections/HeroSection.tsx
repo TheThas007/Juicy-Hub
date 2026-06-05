@@ -12,7 +12,7 @@ export function HeroSection() {
                 Compromise.
               </span>
             </h1>
-            <p className="text-lg leading-relaxed text-[#666666] max-w-lg">
+            <p className="hidden sm:block text-lg leading-relaxed text-[#666666] max-w-lg">
               Handcrafted fresh juices, smoothies, milkshakes, teas and healthy
               beverages made daily with real ingredients.<br />
               Experience Scarborough&apos;s premium wellness destination.
