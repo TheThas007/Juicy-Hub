@@ -73,25 +73,31 @@ export default function AdminProducts() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     try {
+      let res;
       if (editingProduct) {
         // Update
-        await fetch(`/api/products/${editingProduct.id}`, {
+        res = await fetch(`/api/products/${editingProduct.id}`, {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(formData)
         })
       } else {
         // Create
-        await fetch("/api/products", {
+        res = await fetch("/api/products", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(formData)
         })
       }
+      if (!res.ok) {
+        const errorData = await res.json()
+        throw new Error(errorData.details || errorData.error || "Failed to save")
+      }
       await fetchProducts()
       handleCloseModal()
-    } catch (error) {
+    } catch (error: any) {
       console.error("Failed to save product:", error)
+      alert("Error saving product: " + error.message)
     }
   }
 

@@ -12,8 +12,10 @@ export async function GET() {
 }
 
 export async function POST(request: NextRequest) {
+  console.log("POST /api/products called!");
   try {
     const body = await request.json();
+    console.log("Product Body received:", body);
     
     const newProduct: Product = {
       id: Date.now().toString(),
@@ -26,10 +28,13 @@ export async function POST(request: NextRequest) {
       isBestSeller: body.isBestSeller || false,
     };
 
+    console.log("Attempting to save product to Firebase...");
     await saveProduct(newProduct);
+    console.log("Product saved successfully to Firebase!");
 
     return NextResponse.json(newProduct, { status: 201 });
-  } catch (error) {
-    return NextResponse.json({ error: 'Failed to create product' }, { status: 500 });
+  } catch (error: any) {
+    console.error("Firebase save error in POST /api/products:", error);
+    return NextResponse.json({ error: 'Failed to create product', details: error.message }, { status: 500 });
   }
 }
