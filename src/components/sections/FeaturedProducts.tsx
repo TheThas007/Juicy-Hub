@@ -93,7 +93,7 @@ export function FeaturedProducts() {
         </div>
 
         {/* Linear/Apple style Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[320px]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[220px] md:auto-rows-[320px]">
           {filteredProducts.map((product, index) => {
             // Make the first item larger if we have enough items
             const isLarge = index === 0 && filteredProducts.length >= 3;
