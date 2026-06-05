@@ -9,7 +9,7 @@ export function BestSellers() {
   React.useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await fetch("/api/products")
+        const res = await fetch("/api/products", { cache: "no-store" })
         const data = await res.json()
         setBestSellers(data.filter((p: Product) => p.isBestSeller).slice(0, 4))
       } catch (error) {

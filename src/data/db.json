@@ -45,7 +45,7 @@
       "name": "Matcha Latte",
       "desc": "Premium ceremonial grade matcha with oat milk.",
       "price": "$6.50",
-      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCA144oDpwisdF0XcEY4hHpZ9_RkLtCfiQJfYwlBGvjyr8nFwDXU5aeYRvmnkM6fUinHjQGxO6MX9sL-ow7pk83W0JulPjy8sI2ew4dVYNL8HEQyz1DVd6U9CAptqY2wjLxp1g91ChLwzpOSnq6Qpfyg6ojSRqhx-eJlG_YL8AWPI2ldDLAekR88TOxT5NHSONJhz6rzRX4exzI4v3OYUe-CS8Hucy9Erx69OAGP4kOrcXWo7EvcTYoERf89ePlHL61cG79k70BDxg",
+      "image": "https://i.postimg.cc/htRL2qhg/Screenshot-2026-06-05-202442.png",
       "category": "Tea",
       "isFeatured": true,
       "isBestSeller": false
@@ -99,6 +99,16 @@
       "category": "Juices",
       "isFeatured": false,
       "isBestSeller": true
+    },
+    {
+      "id": "1780674602675",
+      "name": "choclate ice cream",
+      "desc": "",
+      "price": "$7.50",
+      "image": "https://i.postimg.cc/htRL2qhg/Screenshot-2026-06-05-202442.png",
+      "category": "Milkshakes",
+      "isFeatured": false,
+      "isBestSeller": false
     }
   ],
   "gallery": [

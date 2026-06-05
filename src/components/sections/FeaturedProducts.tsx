@@ -13,7 +13,7 @@ export function FeaturedProducts() {
   React.useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await fetch("/api/products")
+        const res = await fetch("/api/products", { cache: "no-store" })
         const data = await res.json()
         // Filter only featured products if you want, but the original code showed all products
         // We'll show products that are marked as featured, or just all if that's how it was
