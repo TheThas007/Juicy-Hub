@@ -48,6 +48,7 @@ export default function AdminGallery() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    alert("Please wait, saving image...");
     try {
       const res = await fetch("/api/gallery", {
         method: "POST",

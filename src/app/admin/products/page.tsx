@@ -72,6 +72,7 @@ export default function AdminProducts() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    alert("Please wait, saving product...");
     try {
       let res;
       if (editingProduct) {
