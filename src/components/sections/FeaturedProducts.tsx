@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { Product } from "@/lib/db"
+import { Product, getProducts } from "@/lib/db"
 
 const CATEGORIES = ["All", "Juices", "Smoothies", "Tea", "Coffee", "Milkshakes", "Snacks"]
 
@@ -13,8 +13,7 @@ export function FeaturedProducts() {
   React.useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await fetch("/api/products", { cache: "no-store" })
-        const data = await res.json()
+        const data = await getProducts()
         setAllProducts(data)
       } catch (error) {
         console.error("Failed to fetch products", error)

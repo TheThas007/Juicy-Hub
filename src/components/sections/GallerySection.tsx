@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { GalleryImage } from "@/lib/db"
+import { GalleryImage, getGallery } from "@/lib/db"
 
 export function GallerySection() {
   const [images, setImages] = React.useState<GalleryImage[]>([])
@@ -9,8 +9,7 @@ export function GallerySection() {
   React.useEffect(() => {
     const fetchGallery = async () => {
       try {
-        const res = await fetch("/api/gallery", { cache: "no-store" })
-        const data = await res.json()
+        const data = await getGallery()
         setImages(data)
       } catch (error) {
         console.error("Failed to fetch gallery", error)

@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { GalleryImage, saveGalleryImage } from "@/lib/db"
+import { GalleryImage, saveGalleryImage, getGallery } from "@/lib/db"
 import { Trash2, Plus, X } from "lucide-react"
 
 export default function AdminGallery() {
@@ -20,8 +20,7 @@ export default function AdminGallery() {
   const fetchGallery = async () => {
     setIsLoading(true)
     try {
-      const res = await fetch("/api/gallery", { cache: "no-store" })
-      const data = await res.json()
+      const data = await getGallery()
       setImages(data)
     } catch (error) {
       console.error("Failed to fetch gallery:", error)

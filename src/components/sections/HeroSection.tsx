@@ -33,7 +33,7 @@ export function HeroSection() {
           </div>
           <div className="relative">
             <video
-              src="/images/my-juice-video.mp4.mp4"
+              src="/images/img-1.mp4"
               autoPlay
               loop
               muted

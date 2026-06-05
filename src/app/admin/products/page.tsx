@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Product, saveProduct } from "@/lib/db"
+import { Product, saveProduct, getProducts } from "@/lib/db"
 import { Trash2, Plus, X, Edit, Pencil } from "lucide-react"
 
 export default function AdminProducts() {
@@ -27,8 +27,7 @@ export default function AdminProducts() {
   const fetchProducts = async () => {
     setIsLoading(true)
     try {
-      const res = await fetch("/api/products", { cache: "no-store" })
-      const data = await res.json()
+      const data = await getProducts()
       setProducts(data)
     } catch (error) {
       console.error("Failed to fetch products:", error)

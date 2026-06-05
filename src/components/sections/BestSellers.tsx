@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { Product } from "@/lib/db"
+import { Product, getProducts } from "@/lib/db"
 
 export function BestSellers() {
   const [bestSellers, setBestSellers] = React.useState<Product[]>([])
@@ -9,8 +9,7 @@ export function BestSellers() {
   React.useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await fetch("/api/products", { cache: "no-store" })
-        const data = await res.json()
+        const data = await getProducts()
         setBestSellers(data.filter((p: Product) => p.isBestSeller).slice(0, 4))
       } catch (error) {
         console.error("Failed to fetch best sellers", error)
