@@ -1,11 +1,27 @@
 {
-  "products": [],
-  "gallery": [
+  "products": [
     {
-      "id": "g1",
-      "url": "https://lh3.googleusercontent.com/aida-public/AB6AXuCNc7mjysQw-pBtuH4QTjNSChAPO9xmD_tC5UdqufnP4dVydgZvjyGratI2XKd4teXdXlmJQ2nohtsAwzIrCXjHIUdDp_OhoMz171nMtmCibCXxSDCSCbKdsUHEJJE9OjeapeEAMLoAzANAUzmI1ud1X_80ZzTwSl5vQuT9B8hm6lDi436eNoWQf4jDj4KQEyHFc9uVOyvetXolYaF1o9HywAmvOstM6E4OAQmphRxzF7qgtdqeL8d7kw_HilyUIdgJ-W6h8ukhvVk",
-      "alt": "Classic Falooda"
+      "id": "1780676593501",
+      "name": "thasmilan thasmilan",
+      "desc": "xa",
+      "price": "$6.50",
+      "image": "https://i.postimg.cc/TYDjjP26/Screenshot-2026-06-05-202547.png",
+      "category": "Coffee",
+      "isFeatured": false,
+      "isBestSeller": false
     },
+    {
+      "id": "1780676836951",
+      "name": "thasmilan thasmilan",
+      "desc": "fce",
+      "price": "$7.50",
+      "image": "https://i.postimg.cc/L4rQFwhx/Screenshot-2026-06-05-203440.png",
+      "category": "Juices",
+      "isFeatured": false,
+      "isBestSeller": false
+    }
+  ],
+  "gallery": [
     {
       "id": "g2",
       "url": "https://lh3.googleusercontent.com/aida-public/AB6AXuAF0ZY4x6XRIqBRFpPi2UlQzoWTr5n21MpPJMK0UawRlHFtKGWgZ5dzwHeXumqS3XrLn95Bri4fE7awQIwLbfd75JZpRtmM_crGWjg5EQSIZse-DNdm2IyDrJviw1wAFyuHkHudGujQcbOKezlF0f1xEfCShxOor6oCur5WTRhp3SjzxYg1BIHGEdbyOOSp0MYXQBcf5OqiH9KJJ3RXelevszTFLHxctBfXjbZZLdV4gPv0t-mQOqalMESgL_CFqL3cbbfVlYcVOiE",
@@ -20,6 +36,11 @@
       "id": "g4",
       "url": "https://lh3.googleusercontent.com/aida-public/AB6AXuDLewevG2XDmOiS6cqtGCONpWBiqhMkMBRaEhTBfi9Hy-DI5l2X_fxXEnjawZSj5pvQddL2jam6ad_yd-PcRBTSUuJzhgYY1m_1tvZ4dkqtM1pzbfq8cKZMplhcmnfVKWVm_mu46hsYDGPHio0EqgKuvoeYVDFWZ4mzF9jfmxF03RkZM3wfEdAYn_lcsmfFfM3BpX3kCvozzH8oBfE3aAWn_InyUqYTgwFC3ZwcvpDmh1oN16fGEKDsGTrTbBRz1cXFXIDkOk6siWM",
       "alt": "Watermelon Splash"
+    },
+    {
+      "id": "1780676547810",
+      "url": "https://i.postimg.cc/TYDjjP26/Screenshot-2026-06-05-202547.png",
+      "alt": "scsc"
     }
   ]
 }
