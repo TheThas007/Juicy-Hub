@@ -76,7 +76,7 @@ export function Navbar() {
             href="https://www.doordash.com/store/juicy-hub-inc-scarborough-36820619/84085154/?rwg_token=AFd1xnH-lj5FZ9q8-YywWYKSzw9DNnvusDWehSNqyPy02GSFMnsjR-RlOse2PDRuSw5gB7Hu00xrkRMOP7QswjBuqFXE3akZ8A=="
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden md:block px-6 py-3 rounded-full btn-magnetic font-bold transition-all bg-black text-white hover:bg-black/90 inline-block"
+            className="hidden md:inline-block px-6 py-3 rounded-full btn-magnetic font-bold transition-all bg-black text-white hover:bg-black/90"
           >
             Order Now
           </a>

@@ -24,7 +24,7 @@ export function FloatingOrderButton() {
 
   return (
     <div
-      className={`fixed bottom-8 right-8 z-[100] transition-all duration-500 transform ${
+      className={`fixed bottom-[90px] md:bottom-8 right-4 md:right-8 z-[100] transition-all duration-500 transform ${
         isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0 pointer-events-none"
       }`}
     >
