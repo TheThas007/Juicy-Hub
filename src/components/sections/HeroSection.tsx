@@ -17,11 +17,16 @@ export function HeroSection() {
               beverages made daily with real ingredients.<br />
               Experience Scarborough&apos;s premium wellness destination.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <button className="bg-black text-white px-8 py-4 rounded-xl font-semibold text-base btn-magnetic hover:scale-[1.02] active:scale-95 transition-all">
+            <div className="flex flex-col sm:flex-row gap-4 pt-4 w-full">
+              <a 
+                href="https://www.doordash.com/store/juicy-hub-inc-scarborough-36820619/84085154/?rwg_token=AFd1xnH-lj5FZ9q8-YywWYKSzw9DNnvusDWehSNqyPy02GSFMnsjR-RlOse2PDRuSw5gB7Hu00xrkRMOP7QswjBuqFXE3akZ8A=="
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto bg-black text-white px-8 py-4 rounded-xl font-semibold text-base btn-magnetic hover:scale-[1.02] active:scale-95 transition-all text-center block"
+              >
                 Order Online
-              </button>
-              <button className="border border-[#EAEAEA] bg-white text-[#111111] px-8 py-4 rounded-xl font-semibold text-base hover:bg-[#F8F8F8] transition-all">
+              </a>
+              <button className="w-full sm:w-auto border border-[#EAEAEA] bg-white text-[#111111] px-8 py-4 rounded-xl font-semibold text-base hover:bg-[#F8F8F8] transition-all text-center">
                 View Menu
               </button>
             </div>

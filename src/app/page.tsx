@@ -10,12 +10,13 @@ import { Location } from "@/components/sections/Location"
 import { OrderSection } from "@/components/sections/OrderSection"
 import { ScrollAnimations } from "@/components/sections/ScrollAnimations"
 import { FloatingOrderButton } from "@/components/ui/FloatingOrderButton"
+import { MobileBottomNav } from "@/components/layout/MobileBottomNav"
 
 export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="flex-1 flex flex-col">
+      <main className="flex-1 flex flex-col pb-20 md:pb-0">
         <HeroSection />
         <TrustSection />
         <FeaturedProducts />
@@ -28,6 +29,7 @@ export default function Home() {
       <Footer />
       <ScrollAnimations />
       <FloatingOrderButton />
+      <MobileBottomNav />
     </>
   )
 }

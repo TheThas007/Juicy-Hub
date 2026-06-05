@@ -172,3 +172,9 @@ body {
 .animate-marquee:hover {
   animation-play-state: paused;
 }
+
+/* Safe area padding for mobile bottom nav */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 16px);
+}
+

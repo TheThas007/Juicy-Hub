@@ -23,9 +23,14 @@ export function BestSellers() {
               <p className="text-base text-white/80 mb-6 leading-relaxed">
                 A decadent layered treat with rose, basil seeds, and cream.
               </p>
-              <button className="bg-white text-black px-6 py-2 rounded-xl font-bold hover:bg-white/90 transition-colors btn-magnetic">
+              <a 
+                href="https://www.doordash.com/store/juicy-hub-inc-scarborough-36820619/84085154/?rwg_token=AFd1xnH-lj5FZ9q8-YywWYKSzw9DNnvusDWehSNqyPy02GSFMnsjR-RlOse2PDRuSw5gB7Hu00xrkRMOP7QswjBuqFXE3akZ8A=="
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white text-black px-6 py-2 rounded-xl font-bold hover:bg-white/90 transition-colors btn-magnetic inline-block"
+              >
                 Order $9.50
-              </button>
+              </a>
             </div>
           </div>
 

@@ -68,39 +68,25 @@ export function Navbar() {
             </Link>
           </div>
         </div>
-        <div className="flex items-center gap-6">
-          <button className="hidden sm:block p-2 hover:opacity-80 transition-opacity text-[#111111]">
+        <div className="flex items-center gap-4 md:gap-6">
+          <button className="p-2 hover:opacity-80 transition-opacity text-[#111111]">
             <span className="material-symbols-outlined">shopping_bag</span>
           </button>
-          <button className="px-6 py-3 rounded-full btn-magnetic font-bold transition-all bg-black text-white hover:bg-black/90">
-            Order Now
-          </button>
-          <button
-            className="md:hidden text-[#111111]"
-            onClick={() => setIsOpen(!isOpen)}
+          <a 
+            href="https://www.doordash.com/store/juicy-hub-inc-scarborough-36820619/84085154/?rwg_token=AFd1xnH-lj5FZ9q8-YywWYKSzw9DNnvusDWehSNqyPy02GSFMnsjR-RlOse2PDRuSw5gB7Hu00xrkRMOP7QswjBuqFXE3akZ8A=="
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden md:block px-6 py-3 rounded-full btn-magnetic font-bold transition-all bg-black text-white hover:bg-black/90 inline-block"
           >
-            <span className="material-symbols-outlined">
-              {isOpen ? "close" : "menu"}
-            </span>
+            Order Now
+          </a>
+          <button className="md:hidden p-2 text-[#111111]">
+            <span className="material-symbols-outlined">person</span>
           </button>
         </div>
       </div>
 
-      {/* Mobile Nav */}
-      {isOpen && (
-        <div className="md:hidden border-b border-[#EAEAEA] bg-white p-6 absolute top-[100%] left-0 w-full flex flex-col gap-4 shadow-lg z-50 text-black">
-          <Link href="#hero" className="text-base font-bold" onClick={() => setIsOpen(false)}>HOME</Link>
-          <Link href="#menu" className="text-base text-[#666666]" onClick={() => setIsOpen(false)}>MENU</Link>
-          <Link href="#about" className="text-base text-[#666666]" onClick={() => setIsOpen(false)}>ABOUT US</Link>
-          <Link href="#shop" className="text-base text-[#666666]" onClick={() => setIsOpen(false)}>SHOP</Link>
-          <Link href="#location" className="text-base text-[#666666]" onClick={() => setIsOpen(false)}>LOCATIONS</Link>
-          <Link href="#community" className="text-base text-[#666666]" onClick={() => setIsOpen(false)}>COMMUNITY</Link>
-          <Link href="#contact" className="text-base text-[#666666]" onClick={() => setIsOpen(false)}>CONTACT US</Link>
-          <div className="flex flex-col gap-2 mt-4 pt-4 border-t border-[#EAEAEA]">
-            <button className="bg-black text-white px-6 py-3 rounded-full w-full font-bold">Order Now</button>
-          </div>
-        </div>
-      )}
+      {/* Mobile nav is now handled by MobileBottomNav */}
     </nav>
   )
 }

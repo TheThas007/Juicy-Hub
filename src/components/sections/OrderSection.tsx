@@ -21,9 +21,14 @@ export function OrderSection() {
                 zero-compromise ingredients.
               </p>
               <div className="pt-6">
-                <button className="bg-white text-black px-10 py-4 rounded-full font-bold text-base hover:scale-105 transition-all shadow-lg">
+                <a 
+                  href="https://www.doordash.com/store/juicy-hub-inc-scarborough-36820619/84085154/?rwg_token=AFd1xnH-lj5FZ9q8-YywWYKSzw9DNnvusDWehSNqyPy02GSFMnsjR-RlOse2PDRuSw5gB7Hu00xrkRMOP7QswjBuqFXE3akZ8A=="
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white text-black px-10 py-4 rounded-full font-bold text-base hover:scale-105 transition-all shadow-lg inline-block"
+                >
                   Order Online Now
-                </button>
+                </a>
               </div>
             </div>
           </div>

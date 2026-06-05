@@ -133,9 +133,14 @@ export function FeaturedProducts() {
                       <span className="text-xl font-bold text-white bg-black/40 backdrop-blur-md px-4 py-2 rounded-full">
                         {product.price}
                       </span>
-                      <button className="w-12 h-12 bg-white text-black rounded-full flex items-center justify-center hover:scale-110 transition-transform shadow-lg">
+                      <a 
+                        href="https://www.doordash.com/store/juicy-hub-inc-scarborough-36820619/84085154/?rwg_token=AFd1xnH-lj5FZ9q8-YywWYKSzw9DNnvusDWehSNqyPy02GSFMnsjR-RlOse2PDRuSw5gB7Hu00xrkRMOP7QswjBuqFXE3akZ8A=="
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-12 h-12 bg-white text-black rounded-full flex items-center justify-center hover:scale-110 transition-transform shadow-lg inline-flex"
+                      >
                         <span className="material-symbols-outlined">add</span>
-                      </button>
+                      </a>
                     </div>
                   </div>
                 </div>
