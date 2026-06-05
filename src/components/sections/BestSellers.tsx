@@ -23,7 +23,7 @@ export function BestSellers() {
   }
 
   return (
-    <section className="py-24 reveal-on-scroll" id="shop">
+    <section className="py-24" id="shop">
       <div className="max-w-[1200px] mx-auto px-5 md:px-12">
         <h2 className="text-[32px] font-semibold leading-[1.2] tracking-[-0.02em] mb-12">
           Scarborough&apos;s Favorites

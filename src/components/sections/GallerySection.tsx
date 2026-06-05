@@ -21,7 +21,7 @@ export function GallerySection() {
   if (images.length === 0) return null;
 
   return (
-    <section className="py-24 bg-white reveal-on-scroll" id="gallery">
+    <section className="py-24 bg-white" id="gallery">
       <div className="max-w-[1200px] mx-auto px-5 md:px-12">
         <h2 className="text-[32px] font-semibold leading-[1.2] tracking-[-0.02em] mb-12 text-center">
           Our Gallery
