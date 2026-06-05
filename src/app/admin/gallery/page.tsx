@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { GalleryImage } from "@/lib/db"
+import { GalleryImage, saveGalleryImage } from "@/lib/db"
 import { Trash2, Plus, X } from "lucide-react"
 
 export default function AdminGallery() {
@@ -48,19 +48,18 @@ export default function AdminGallery() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    alert("Please wait, saving image...");
+    alert("Please wait, saving image directly to database...");
     try {
-      const res = await fetch("/api/gallery", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData)
-      })
-      if (!res.ok) {
-        const errorData = await res.json()
-        throw new Error(errorData.details || errorData.error || "Failed to save")
+      const newImage: GalleryImage = {
+        id: Date.now().toString(),
+        url: formData.url,
+        alt: formData.alt
       }
+      await saveGalleryImage(newImage)
+      
       await fetchGallery()
       handleCloseModal()
+      alert("Image saved successfully!");
     } catch (error: any) {
       console.error("Failed to add image:", error)
       alert("Error adding image: " + error.message)

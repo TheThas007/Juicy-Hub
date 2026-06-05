@@ -1,20 +1,21 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Product } from "@/lib/db"
-import { Pencil, Trash2, Plus, X } from "lucide-react"
+import { Product, saveProduct } from "@/lib/db"
+import { Trash2, Plus, X, Edit, Pencil } from "lucide-react"
 
 export default function AdminProducts() {
   const [products, setProducts] = useState<Product[]>([])
   const [isLoading, setIsLoading] = useState(true)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [editingProduct, setEditingProduct] = useState<Product | null>(null)
-  const [formData, setFormData] = useState<Partial<Product>>({
+  
+  const [formData, setFormData] = useState({
     name: "",
     desc: "",
     price: "",
     image: "",
-    category: "",
+    category: "Juices",
     isFeatured: false,
     isBestSeller: false
   })
@@ -39,7 +40,15 @@ export default function AdminProducts() {
   const handleOpenModal = (product?: Product) => {
     if (product) {
       setEditingProduct(product)
-      setFormData(product)
+      setFormData({
+        name: product.name,
+        desc: product.desc,
+        price: product.price,
+        image: product.image,
+        category: product.category,
+        isFeatured: product.isFeatured,
+        isBestSeller: product.isBestSeller
+      })
     } else {
       setEditingProduct(null)
       setFormData({
@@ -61,41 +70,33 @@ export default function AdminProducts() {
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value, type } = e.target as HTMLInputElement
-    const checked = (e.target as HTMLInputElement).checked
-
+    const value = e.target.type === 'checkbox' ? (e.target as HTMLInputElement).checked : e.target.value
     setFormData(prev => ({
       ...prev,
-      [name]: type === 'checkbox' ? checked : value
+      [e.target.name]: value
     }))
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    alert("Please wait, saving product...");
+    alert("Please wait, saving product directly to database...");
     try {
-      let res;
-      if (editingProduct) {
-        // Update
-        res = await fetch(`/api/products/${editingProduct.id}`, {
-          method: "PUT",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData)
-        })
-      } else {
-        // Create
-        res = await fetch("/api/products", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData)
-        })
-      }
-      if (!res.ok) {
-        const errorData = await res.json()
-        throw new Error(errorData.details || errorData.error || "Failed to save")
-      }
+      const newProduct: Product = {
+        id: editingProduct ? editingProduct.id : Date.now().toString(),
+        name: formData.name,
+        desc: formData.desc,
+        price: formData.price,
+        image: formData.image,
+        category: formData.category,
+        isFeatured: formData.isFeatured,
+        isBestSeller: formData.isBestSeller
+      };
+      
+      await saveProduct(newProduct);
+      
       await fetchProducts()
       handleCloseModal()
+      alert("Product saved successfully!");
     } catch (error: any) {
       console.error("Failed to save product:", error)
       alert("Error saving product: " + error.message)
