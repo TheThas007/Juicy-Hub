@@ -19,13 +19,13 @@ export interface GalleryImage {
 }
 
 const firebaseConfig = {
-  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
-  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
+  apiKey: "AIzaSyCy08no1xlIE8GZNGF-IMbVWQyvAs-7AQ0",
+  authDomain: "juicyhub-3cfb8.firebaseapp.com",
+  projectId: "juicyhub-3cfb8",
+  storageBucket: "juicyhub-3cfb8.firebasestorage.app",
+  messagingSenderId: "688739235467",
+  appId: "1:688739235467:web:19f3b7b156474ff939468e",
+  measurementId: "G-CMPY31X5NB"
 };
 
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
