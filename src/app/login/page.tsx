@@ -25,8 +25,7 @@ export default function LoginPage() {
       })
 
       if (res.ok) {
-        router.push("/admin")
-        router.refresh()
+        window.location.href = "/admin"
       } else {
         const data = await res.json()
         setError(data.error || "Invalid credentials")
@@ -44,7 +43,7 @@ export default function LoginPage() {
         <div className="flex justify-center items-center gap-3 mb-6">
           <img
             alt="Juicy Hub Logo"
-            className="h-20 w-auto"
+            className="h-16 w-auto"
             src="/logo.png"
           />
           <span className="text-3xl font-extrabold tracking-tight leading-none">

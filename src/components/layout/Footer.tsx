@@ -9,7 +9,7 @@ export function Footer() {
             <div className="flex items-center gap-3">
               <img
                 alt="Juicy Hub Logo"
-                className="h-16 md:h-20 w-auto"
+                className="h-12 md:h-16 w-auto"
                 src="/logo.png"
               />
               <span className="text-2xl font-extrabold tracking-tight leading-none">
