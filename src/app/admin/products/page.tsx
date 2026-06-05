@@ -252,13 +252,13 @@ export default function AdminProducts() {
                 <div className="col-span-2">
                   <label className="block text-sm font-medium text-gray-700 mb-1">Image URL</label>
                   <input 
-                    type="url" 
+                    type="text" 
                     name="image" 
                     value={formData.image || ""} 
                     onChange={handleChange} 
                     required 
                     className="w-full border border-gray-300 rounded-lg p-2.5 focus:ring-2 focus:ring-black focus:border-black outline-none transition-all"
-                    placeholder="https://example.com/image.jpg"
+                    placeholder="https://example.com/image.jpg or /image.png"
                   />
                   {formData.image && (
                     <div className="mt-4 border rounded-lg p-2 inline-block">

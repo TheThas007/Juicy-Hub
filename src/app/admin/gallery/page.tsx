@@ -136,13 +136,13 @@ export default function AdminGallery() {
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">Image URL</label>
                   <input 
-                    type="url" 
+                    type="text" 
                     name="url" 
-                    value={formData.url} 
+                    value={formData.url || ""} 
                     onChange={handleChange} 
                     required 
                     className="w-full border border-gray-300 rounded-lg p-2.5 focus:ring-2 focus:ring-black focus:border-black outline-none transition-all"
-                    placeholder="https://example.com/image.jpg"
+                    placeholder="https://example.com/image.jpg or /image.png"
                   />
                 </div>
                 
