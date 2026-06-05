@@ -20,7 +20,7 @@ export default function AdminGallery() {
   const fetchGallery = async () => {
     setIsLoading(true)
     try {
-      const res = await fetch("/api/gallery")
+      const res = await fetch("/api/gallery", { cache: "no-store" })
       const data = await res.json()
       setImages(data)
     } catch (error) {
