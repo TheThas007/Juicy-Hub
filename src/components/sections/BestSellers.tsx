@@ -108,7 +108,6 @@ export function BestSellers() {
               )
             })}
           </div>
-        )}
       </div>
     </section>
   )
