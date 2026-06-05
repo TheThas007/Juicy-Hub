@@ -1,29 +1,27 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getDb, saveDb, Product } from '@/lib/db';
+import { getProduct, saveProduct, deleteProduct, Product } from '@/lib/db';
 
 export async function PUT(
   request: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
+  { params }: { params: { id: string } }
 ) {
   try {
-    const { id } = await params;
+    const { id } = params;
     const body = await request.json();
-    const db = getDb();
     
-    const productIndex = db.products.findIndex(p => p.id === id);
+    const existingProduct = await getProduct(id);
     
-    if (productIndex === -1) {
+    if (!existingProduct) {
       return NextResponse.json({ error: 'Product not found' }, { status: 404 });
     }
 
     const updatedProduct: Product = {
-      ...db.products[productIndex],
+      ...existingProduct,
       ...body,
       id: id, // Ensure ID cannot be changed
     };
 
-    db.products[productIndex] = updatedProduct;
-    saveDb(db);
+    await saveProduct(updatedProduct);
 
     return NextResponse.json(updatedProduct);
   } catch (error) {
@@ -33,20 +31,18 @@ export async function PUT(
 
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
+  { params }: { params: { id: string } }
 ) {
   try {
-    const { id } = await params;
-    const db = getDb();
+    const { id } = params;
     
-    const initialLength = db.products.length;
-    db.products = db.products.filter(p => p.id !== id);
+    const existingProduct = await getProduct(id);
     
-    if (db.products.length === initialLength) {
+    if (!existingProduct) {
       return NextResponse.json({ error: 'Product not found' }, { status: 404 });
     }
 
-    saveDb(db);
+    await deleteProduct(id);
 
     return NextResponse.json({ success: true });
   } catch (error) {

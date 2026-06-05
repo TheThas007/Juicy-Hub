@@ -1,11 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
 export const dynamic = 'force-dynamic';
-import { getDb, saveDb, Product } from '@/lib/db';
+import { getProducts, saveProduct, Product } from '@/lib/db';
 
 export async function GET() {
   try {
-    const db = getDb();
-    return NextResponse.json(db.products);
+    const products = await getProducts();
+    return NextResponse.json(products);
   } catch (error) {
     return NextResponse.json({ error: 'Failed to fetch products' }, { status: 500 });
   }
@@ -14,7 +14,6 @@ export async function GET() {
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const db = getDb();
     
     const newProduct: Product = {
       id: Date.now().toString(),
@@ -27,8 +26,7 @@ export async function POST(request: NextRequest) {
       isBestSeller: body.isBestSeller || false,
     };
 
-    db.products.push(newProduct);
-    saveDb(db);
+    await saveProduct(newProduct);
 
     return NextResponse.json(newProduct, { status: 201 });
   } catch (error) {
