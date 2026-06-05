@@ -16,11 +16,11 @@ export function Navbar() {
           <Link href="/" className="flex items-center gap-3">
             <img
               alt="Juicy Hub Logo"
-              className="h-10 w-auto object-contain"
+              className="h-16 md:h-20 w-auto"
               src="/logo.png"
             />
             <span className="text-2xl font-extrabold tracking-tight leading-none">
-              <span className="text-[#14532D]">Juicy</span><span className="text-[#E53935]"> Hub</span>
+              <span className="text-black">Juicy Hub</span>
             </span>
           </Link>
           <div className="hidden md:flex gap-6">

@@ -3,29 +3,39 @@ import * as React from "react"
 export function CustomerReviews() {
   const reviews = [
     {
-      text: "\"The freshest juices in Scarborough. I come here every morning for my ABC Glow. The environment is so clean and peaceful.\"",
-      name: "Sarah Jenkins",
+      text: "\"I dropped by at juice hub pretty close to their closing time and honestly didn't expect to be accommodated. But Shianna, who was working there, went out of her way to make a drink for me anyway. She was super kind and cheerful. Definitely made my evening a lot better.\"",
+      name: "Rajeshwar Singh",
       label: "LOCAL GUIDE",
     },
     {
-      text: <>" <span className="text-[#14532D] font-bold">Juicy</span> <span className="text-[#E53935] font-bold">Hub</span> is a gem. Their Sugarcane juice is actually pressed fresh right in front of you. Truly zero compromise on quality."</>,
-      name: "Michael Chen",
-      label: "LOYAL CUSTOMER",
+      text: "\"Hands down one of the best juice spots around! Everything tastes super fresh, not overly sweet, and you can tell they use real ingredients. Staff is friendly and the place is always clean. Highly recommend always!\"",
+      name: "Menusan Sivanesan",
+      label: "CUSTOMER",
     },
     {
-      text: "\"Best smoothies I've ever had! The Pineapple Zing totally transformed my morning routine. Plus, the staff is incredibly friendly.\"",
-      name: "Emily Rodriguez",
-      label: "FITNESS ENTHUSIAST",
+      text: "\"Just discovered this place and I must say I am incredibly impressed! The juice is all fresh made, incredibly delicious, and Ranu is the star of the show she makes you feel right at home! Absolutely amazing vibes in this place it's a must visit!\"",
+      name: "Luvy Jawanda",
+      label: "LOCAL GUIDE",
     },
     {
-      text: "\"I order their wellness shots every week. You can really taste the raw, organic ingredients. Highly recommend to everyone.\"",
-      name: "David Kim",
-      label: "VERIFIED BUYER",
+      text: "\"Tried the ABC Glow healthy drink and the Beetroot juice at Juicy Hub both were excellent. The juices tasted fresh, pure, and natural with no water mixed in. You can really tell the quality. Highly recommend if you're looking for authentic healthy juice options\"",
+      name: "Palasingham Thivaharan",
+      label: "CUSTOMER",
     },
     {
-      text: "\"A luxury juice experience without the crazy prices. The Royal Falooda is out of this world. I'm a customer for life.\"",
-      name: "Jessica Patel",
-      label: "FOOD BLOGGER",
+      text: "\"Juicy Hub is a hidden gem in Scarborough serving refreshing drinks, delicious ice cream, and the perfect variety of snacks—all in one cozy spot!\"",
+      name: "Marina Yaseen",
+      label: "LOCAL GUIDE",
+    },
+    {
+      text: "\"We ordered Irani Kadak Chai, Bru coffee and Masala Chai. It was one of the best Chai that we had in Toronto outside of our home. This little gem of a place has the potential to become very popular!\"",
+      name: "Karan Mahimkar",
+      label: "CUSTOMER",
+    },
+    {
+      text: "\"I haven been to this little cafe twice, and the service has been phenomenal. They are so kind, accommodating and full of energy. Whether you ask for a coffee, a shake or something to eat everything was great. Definitely recommend\"",
+      name: "Neetisha Gupta",
+      label: "CUSTOMER",
     },
   ]
 

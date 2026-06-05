@@ -1,61 +1,31 @@
 "use client"
 
 import * as React from "react"
+import { Product } from "@/lib/db"
 
 const CATEGORIES = ["All", "Juices", "Smoothies", "Tea", "Coffee", "Milkshakes", "Snacks"]
 
 export function FeaturedProducts() {
   const [activeTab, setActiveTab] = React.useState("All")
+  const [allProducts, setAllProducts] = React.useState<Product[]>([])
+  const [isLoading, setIsLoading] = React.useState(true)
 
-  const allProducts = [
-    {
-      name: "Sugarcane Juice",
-      desc: "Pure pressed cane, naturally sweet with a hint of lime. A refreshing classic.",
-      price: "$7.50",
-      image:
-        "https://lh3.googleusercontent.com/aida-public/AB6AXuDpIXEd0FubH3gBA2EEhYXLHJq2A2hZAbxej29msqm16oQcSGWQrg5wDws37Tc28CJthkWsvHLY-cefZ2u1TTUsbH-ndBLsixUG3voPBiI5gk1emYXe3ySZS-twGbXhIxQ1_x5p9BL3kcoxLJiprntE9kOQKZony4ua9NICyJQw9zn_9w6GIZINOcL5aetln3TH3sAl5c8R9Ub3GlLcTtLD2_Gphjqz1mQc7fSmAhvC1q_mnXSOBrirxw1aZKovhdawopFvnLH9UM0",
-      category: "Juices",
-      featured: true,
-    },
-    {
-      name: "ABC Glow",
-      desc: "Apple, Beetroot, Carrot. The ultimate skin detox elixir.",
-      price: "$8.95",
-      image:
-        "https://lh3.googleusercontent.com/aida-public/AB6AXuDZ4AAmA-HdE_li1RFS9yTMAA86pvXZ4Fu_3OJ9TSQiwcgdOfUb4LTaQ6SDMOA27Ng7NnrAyICHTm-nspSLIgSAp4tBQsD2OssR61iUcUHpRfV9sYYOjMbc4n4Q6NwsJmbnY261a_lqAP2CEqi-o84tjWaJ5ijPY3HuOPVV0_YhkQcPd1_5ByCTqc3PhayM3jaK3z9zIsU7PdbSMsct0wxxKSTM8HXi9CikfOnx4OxsqXvkTTaKq-Nj0HbGS_BLYFfQNl0UU-IaPyU",
-      category: "Juices",
-    },
-    {
-      name: "Pure Orange",
-      desc: "100% Florida citrus, squeezed to order. Vitamin C powerhouse.",
-      price: "$6.50",
-      image:
-        "https://lh3.googleusercontent.com/aida-public/AB6AXuChnmr8bubAL04AGzXfmjQ7uagMyG3uQf2Cc7Y9J2JuMUtZIhKeyPauMvOvWoCW9XAQMgosG7sZkb3nBa44WvMhuoRmokSj0v_CVIiR6shOfK5_D6YKZ-mx_IRuk6xm9_eQly7bb1Rewq0LWEeDNWibQK1E9YyinKcnU-d0iZzCJK_7W3cZn8b0cBCykoKKhCvCqlB0imwaWVjHfH1zZwgl0RzbVe1TCaWJq2vddttpRJ6aIfxu0bTBZ18kgV5LDAJBYRet_P9mcjg",
-      category: "Juices",
-    },
-    {
-      name: "Pineapple Zing",
-      desc: "Sweet pineapple with a touch of ginger for digestive health.",
-      price: "$7.95",
-      image:
-        "https://lh3.googleusercontent.com/aida-public/AB6AXuDLewevG2XDmOiS6cqtGCONpWBiqhMkMBRaEhTBfi9Hy-DI5l2X_fxXEnjawZSj5pvQddL2jam6ad_yd-PcRBTSUuJzhgYY1m_1tvZ4dkqtM1pzbfq8cKZMplhcmnfVKWVm_mu46hsYDGPHio0EqgKuvoeYVDFWZ4mzF9jfmxF03RkZM3wfEdAYn_lcsmfFfM3BpX3kCvozzH8oBfE3aAWn_InyUqYTgwFC3ZwcvpDmh1oN16fGEKDsGTrTbBRz1cXFXIDkOk6siWM",
-      category: "Smoothies",
-    },
-    {
-      name: "Matcha Latte",
-      desc: "Premium ceremonial grade matcha with oat milk.",
-      price: "$6.50",
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCA144oDpwisdF0XcEY4hHpZ9_RkLtCfiQJfYwlBGvjyr8nFwDXU5aeYRvmnkM6fUinHjQGxO6MX9sL-ow7pk83W0JulPjy8sI2ew4dVYNL8HEQyz1DVd6U9CAptqY2wjLxp1g91ChLwzpOSnq6Qpfyg6ojSRqhx-eJlG_YL8AWPI2ldDLAekR88TOxT5NHSONJhz6rzRX4exzI4v3OYUe-CS8Hucy9Erx69OAGP4kOrcXWo7EvcTYoERf89ePlHL61cG79k70BDxg",
-      category: "Tea",
-    },
-    {
-      name: "Royal Falooda",
-      desc: "Rose syrup, vermicelli, sweet basil seeds and ice cream.",
-      price: "$8.50",
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDpIXEd0FubH3gBA2EEhYXLHJq2A2hZAbxej29msqm16oQcSGWQrg5wDws37Tc28CJthkWsvHLY-cefZ2u1TTUsbH-ndBLsixUG3voPBiI5gk1emYXe3ySZS-twGbXhIxQ1_x5p9BL3kcoxLJiprntE9kOQKZony4ua9NICyJQw9zn_9w6GIZINOcL5aetln3TH3sAl5c8R9Ub3GlLcTtLD2_Gphjqz1mQc7fSmAhvC1q_mnXSOBrirxw1aZKovhdawopFvnLH9UM0",
-      category: "Milkshakes",
+  React.useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const res = await fetch("/api/products")
+        const data = await res.json()
+        // Filter only featured products if you want, but the original code showed all products
+        // We'll show products that are marked as featured, or just all if that's how it was
+        setAllProducts(data.filter((p: Product) => p.isFeatured))
+      } catch (error) {
+        console.error("Failed to fetch products", error)
+      } finally {
+        setIsLoading(false)
+      }
     }
-  ]
+    fetchProducts()
+  }, [])
 
   const filteredProducts = activeTab === "All" 
     ? allProducts 

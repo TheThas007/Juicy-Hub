@@ -9,11 +9,11 @@ export function Footer() {
             <div className="flex items-center gap-3">
               <img
                 alt="Juicy Hub Logo"
-                className="h-10 w-auto"
+                className="h-16 md:h-20 w-auto"
                 src="/logo.png"
               />
               <span className="text-2xl font-extrabold tracking-tight leading-none">
-                <span className="text-[#14532D]">Juicy</span><span className="text-[#E53935]"> Hub</span>
+                <span className="text-black">Juicy Hub</span>
               </span>
             </div>
             <p className="text-base text-[#666666] leading-relaxed">
@@ -124,12 +124,14 @@ export function Footer() {
         </div>
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-[#EAEAEA] gap-4">
           <p className="text-base text-[#666666]">
-            © 2024 <span className="text-[#14532D] font-bold">Juicy</span> <span className="text-[#E53935] font-bold">Hub</span>. Zero Compromise.
+            © 2024 <span className="text-black font-bold">Juicy Hub</span>. Zero Compromise.
           </p>
           <div className="flex items-center gap-2 text-[#666666] opacity-50 text-[10px] font-semibold tracking-[0.1em]">
             <span>DESIGNED FOR PERFORMANCE</span>
             <span className="w-1 h-1 bg-[#666666] rounded-full"></span>
             <span>SCARBOROUGH, CA</span>
+            <span className="w-1 h-1 bg-[#666666] rounded-full"></span>
+            <Link href="/admin" className="hover:text-black transition-colors">ADMIN PANEL</Link>
           </div>
         </div>
       </div>

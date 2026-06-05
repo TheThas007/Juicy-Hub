@@ -9,6 +9,7 @@ import { CustomerReviews } from "@/components/sections/CustomerReviews"
 import { Location } from "@/components/sections/Location"
 import { OrderSection } from "@/components/sections/OrderSection"
 import { ScrollAnimations } from "@/components/sections/ScrollAnimations"
+import { GallerySection } from "@/components/sections/GallerySection"
 import { FloatingOrderButton } from "@/components/ui/FloatingOrderButton"
 import { MobileBottomNav } from "@/components/layout/MobileBottomNav"
 
@@ -22,6 +23,7 @@ export default function Home() {
         <FeaturedProducts />
         <WhyJuicyHub />
         <BestSellers />
+        <GallerySection />
         <CustomerReviews />
         <Location />
         <OrderSection />

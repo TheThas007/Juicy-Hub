@@ -41,7 +41,7 @@ export function OrderSection() {
                 Book Live Stations for Your Event
               </h2>
               <p className="text-base text-[#666666] leading-relaxed">
-                Bring the <span className="text-[#14532D] font-bold">Juicy</span> <span className="text-[#E53935] font-bold">Hub</span> experience to your next event and treat your guests to fresh drinks made right in front of them.<br/><br/>
+                Bring the <span className="text-black font-bold">Juicy Hub</span> experience to your next event and treat your guests to fresh drinks made right in front of them.<br/><br/>
                 <span className="font-semibold text-black">Perfect for birthdays, weddings, corporate events, and private parties.</span>
               </p>
               
