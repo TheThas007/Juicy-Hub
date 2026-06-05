@@ -3,10 +3,10 @@ import { getProduct, saveProduct, deleteProduct, Product } from '@/lib/db';
 
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const { id } = params;
+    const { id } = await params;
     const body = await request.json();
     
     const existingProduct = await getProduct(id);
@@ -31,10 +31,10 @@ export async function PUT(
 
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const { id } = params;
+    const { id } = await params;
     
     const existingProduct = await getProduct(id);
     
