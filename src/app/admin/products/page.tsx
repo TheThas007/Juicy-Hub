@@ -215,8 +215,9 @@ export default function AdminProducts() {
                     name="desc" 
                     value={formData.desc || ""} 
                     onChange={handleChange} 
-                    rows={3}
+                    rows={3} 
                     className="w-full border border-gray-300 rounded-lg p-2.5 focus:ring-2 focus:ring-black focus:border-black outline-none transition-all"
+                    placeholder="Brief description of the product"
                   />
                 </div>
 
@@ -256,7 +257,6 @@ export default function AdminProducts() {
                     name="image" 
                     value={formData.image || ""} 
                     onChange={handleChange} 
-                    required 
                     className="w-full border border-gray-300 rounded-lg p-2.5 focus:ring-2 focus:ring-black focus:border-black outline-none transition-all"
                     placeholder="https://example.com/image.jpg or /image.png"
                   />
