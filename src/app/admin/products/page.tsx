@@ -106,9 +106,7 @@ export default function AdminProducts() {
     if (!confirm("Are you sure you want to delete this product?")) return
 
     try {
-      await fetch(`/api/products/${id}`, {
-        method: "DELETE"
-      })
+      await import("@/lib/db").then(m => m.deleteProduct(id));
       await fetchProducts()
     } catch (error) {
       console.error("Failed to delete product:", error)

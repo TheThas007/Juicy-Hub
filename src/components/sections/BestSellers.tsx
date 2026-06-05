@@ -18,6 +18,10 @@ export function BestSellers() {
     fetchProducts()
   }, [])
 
+  if (bestSellers.length === 0) {
+    return null;
+  }
+
   return (
     <section className="py-24 reveal-on-scroll" id="shop">
       <div className="max-w-[1200px] mx-auto px-5 md:px-12">
@@ -25,11 +29,10 @@ export function BestSellers() {
           Scarborough&apos;s Favorites
         </h2>
         
-        {bestSellers.length > 0 && (
-          <div className="grid grid-cols-1 md:grid-cols-3 grid-rows-auto md:grid-rows-2 gap-6 md:h-[600px]">
-            {bestSellers.map((product, index) => {
-              // Replicating the specific layout from original design
-              if (index === 0) {
+        <div className="grid grid-cols-1 md:grid-cols-3 grid-rows-auto md:grid-rows-2 gap-6">
+          {bestSellers.map((product, index) => {
+            // Replicating the specific layout from original design
+            if (index === 0) {
                 // First item (Tall card)
                 return (
                   <div key={product.id} className="md:col-span-1 md:row-span-2 relative group rounded-3xl overflow-hidden bg-black text-white p-8 flex flex-col justify-end min-h-[250px] md:min-h-[400px]">

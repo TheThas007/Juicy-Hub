@@ -69,9 +69,7 @@ export default function AdminGallery() {
     if (!confirm("Are you sure you want to delete this image?")) return
 
     try {
-      await fetch(`/api/gallery/${id}`, {
-        method: "DELETE"
-      })
+      await import("@/lib/db").then(m => m.deleteGalleryImage(id));
       await fetchGallery()
     } catch (error) {
       console.error("Failed to delete image:", error)
